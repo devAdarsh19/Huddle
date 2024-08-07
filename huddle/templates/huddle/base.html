@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Huddle</title>
+  </head>
+  <body class="bg-slate-700">
+    <nav class="py-4 px-8 bg-slate-800 text-white">
+      <h1 class="text-2xl font-bold">Huddle</h1>
+    </nav>
+
+    <div class="p-8">
+      
+      {% if messages %}
+        {% for message in messages %}
+          <div class="max-w-3xl mx-auto mb-4 py-4 px-6 bg-sky-800 text-white rounded-xl">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+        
+      {% block content %} {% endblock content %}
+    </div>
+  </body>
+</html>
